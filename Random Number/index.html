@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let calc = Math.floor(Math.random() * 10) + 1; //geneate number btw 1-10
+    let getRandomNumber = function(start, range) {
+        let getRandom = Math.floor(Math.random() * range) + start;
+        while(getRandom > range) {
+            getRandom = Math.floor(Math.random() * range) + start;
+        }
+        
+        return getRandom;
+
+    }
+    console.log(calc, getRandomNumber(500, 1000));
+    // window.close(); //BOM - Browser Object Model
+
+    // document.querySelector("#id"); //DOM - Document Object Model
+    /**
+    DOM comprises of NODEs -> The closing and closing of tags in browser/script
+    Heirachy -> tags inside tags
+
+     * 
+     */
+</script>
+</html>

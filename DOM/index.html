@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is a title!</title>
+</head>
+<body>
+    <div class="box">
+        <h1>This is a box!</h1>
+    </div>
+</body>
+<script>
+let getBody = document.body;
+let newElement = document.createElement("h1");
+
+let date = new Date(); //js obj
+let currentHour = date.getHours(); //js mthod
+
+let createTxtmsg;
+
+if (currentHour >= 4 && currentHour < 10) {
+    createTxtmsg = "Good morning!";
+}   else if (currentHour >= 10 && currentHour < 12) {
+    createTxtmsg = "Good day!";
+} else if (currentHour >= 12 && currentHour < 18) {
+    createTxtmsg = "Good afternoon!";
+} else if (currentHour >= 18 && currentHour < 22) {
+    createTxtmsg = "Good evening!";
+} else if (currentHour >= 22 && currentHour < 4) {
+    createTxtmsg = "Good night!";
+} else {
+    createTxtmsg = 'Are you from a different planet! :0';
+}
+
+console.log(date, currentHour, createTxtmsg);
+let createEletxt = document.createTextNode(createTxtmsg);
+newElement.appendChild(createEletxt);
+getBody.appendChild(newElement);
+
+newElement.setAttribute("class", "welcome");
+newElement.style.cssText = "text-align: center; font-size:60px; font-family:arial;";
+
+
+// learning DOM
+/**
+ * 
+     let box = document.querySelector(".box")
+        undefined
+        let box = document.querySelector(".box");
+        undefined
+        let newElement = document.createElement("a)
+VM1218: 1 Uncaught SyntaxError: Invalid or unexpected token
+let newElement = document.createElement("a:)
+VM1223: 1 Uncaught SyntaxError: Invalid or unexpected token
+let newElement = document.createElement("a")
+undefined
+newElement.append("a")
+undefined
+box.appendChild(newElement);
+        <a>​a​</a>
+        newElement.append("This is a link")
+        undefined
+        box.appendChild(newElement);
+        <a>​"a""This is a link"</a>
+        newElement.setAttribute("href", "www.google.com")
+
+ */   
+
+// Set css properties in js
+/**
+ * document.querySelector("h1").style;
+CSSStyleDeclaration {alignContent: "", alignItems: "", alignSelf: "", alignmentBaseline: "", all: "", …}alignContent: ""alignItems: ""alignSelf: ""alignmentBaseline: ""all: ""animation: ""animationDelay: ""animationDirection: ""animationDuration: ""animationFillMode: ""animationIterationCount: ""animationName: ""animationPlayState: ""animationTimingFunction: ""appearance: ""backdropFilter: ""backfaceVisibility: ""background: ""backgroundAttachment: ""backgroundBlendMode: ""backgroundClip: ""backgroundColor: ""backgroundImage: ""backgroundOrigin: ""backgroundPosition: ""backgroundPositionX: ""backgroundPositionY: ""backgroundRepeat: ""backgroundRepeatX: ""backgroundRepeatY: ""backgroundSize: ""baselineShift: ""blockSize: ""border: ""borderBlockEnd: ""borderBlockEndColor: ""borderBlockEndStyle: ""borderBlockEndWidth: ""borderBlockStart: ""borderBlockStartColor: ""borderBlockStartStyle: ""borderBlockStartWidth: ""borderBottom: ""borderBottomColor: ""borderBottomLeftRadius: ""borderBottomRightRadius: ""borderBottomStyle: ""borderBottomWidth: ""borderCollapse: ""borderColor: ""borderImage: ""borderImageOutset: ""borderImageRepeat: ""borderImageSlice: ""borderImageSource: ""borderImageWidth: ""borderInlineEnd: ""borderInlineEndColor: ""borderInlineEndStyle: ""borderInlineEndWidth: ""borderInlineStart: ""borderInlineStartColor: ""borderInlineStartStyle: ""borderInlineStartWidth: ""borderLeft: ""borderLeftColor: ""borderLeftStyle: ""borderLeftWidth: ""borderRadius: ""borderRight: ""borderRightColor: ""borderRightStyle: ""borderRightWidth: ""borderSpacing: ""borderStyle: ""borderTop: ""borderTopColor: ""borderTopLeftRadius: ""borderTopRightRadius: ""borderTopStyle: ""borderTopWidth: ""borderWidth: ""bottom: ""boxShadow: ""boxSizing: ""breakAfter: ""breakBefore: ""breakInside: ""bufferedRendering: ""captionSide: ""caretColor: ""clear: ""clip: ""clipPath: ""clipRule: ""color: ""colorInterpolation: ""colorInterpolationFilters: ""colorRendering: ""colorScheme: ""columnCount: ""columnFill: ""columnGap: ""columnRule: ""columnRuleColor: ""columnRuleStyle: ""columnRuleWidth: ""columnSpan: ""columnWidth: ""columns: ""contain: ""containIntrinsicSize: ""content: ""contentVisibility: ""counterIncrement: ""counterReset: ""counterSet: ""cssFloat: ""cssText: ""cursor: ""cx: ""cy: ""d: ""direction: ""display: ""dominantBaseline: ""emptyCells: ""fill: ""fillOpacity: ""fillRule: ""filter: ""flex: ""flexBasis: ""flexDirection: ""flexFlow: ""flexGrow: ""flexShrink: ""flexWrap: ""float: ""floodColor: ""floodOpacity: ""font: ""fontDisplay: ""fontFamily: ""fontFeatureSettings: ""fontKerning: ""fontOpticalSizing: ""fontSize: ""fontStretch: ""fontStyle: ""fontVariant: ""fontVariantCaps: ""fontVariantEastAsian: ""fontVariantLigatures: ""fontVariantNumeric: ""fontVariationSettings: ""fontWeight: ""gap: ""grid: ""gridArea: ""gridAutoColumns: ""gridAutoFlow: ""gridAutoRows: ""gridColumn: ""gridColumnEnd: ""gridColumnGap: ""gridColumnStart: ""gridGap: ""gridRow: ""gridRowEnd: ""gridRowGap: ""gridRowStart: ""gridTemplate: ""gridTemplateAreas: ""gridTemplateColumns: ""gridTemplateRows: ""height: ""hyphens: ""imageOrientation: ""imageRendering: ""inherits: ""initialValue: ""inlineSize: ""isolation: ""justifyContent: ""justifyItems: ""justifySelf: ""left: ""length: 0letterSpacing: ""lightingColor: ""lineBreak: ""lineHeight: ""listStyle: ""listStyleImage: ""listStylePosition: ""listStyleType: ""margin: ""marginBlockEnd: ""marginBlockStart: ""marginBottom: ""marginInlineEnd: ""marginInlineStart: ""marginLeft: ""marginRight: ""marginTop: ""marker: ""markerEnd: ""markerMid: ""markerStart: ""mask: ""maskType: ""maxBlockSize: ""maxHeight: ""maxInlineSize: ""maxWidth: ""maxZoom: ""minBlockSize: ""minHeight: ""minInlineSize: ""minWidth: ""minZoom: ""mixBlendMode: ""objectFit: ""objectPosition: ""offset: ""offsetDistance: ""offsetPath: ""offsetRotate: ""opacity: ""order: ""orientation: ""orphans: ""outline: ""outlineColor: ""outlineOffset: ""outlineStyle: ""outlineWidth: ""overflow: ""overflowAnchor: ""overflowWrap: ""overflowX: ""overflowY: ""overscrollBehavior: ""overscrollBehaviorBlock: ""overscrollBehaviorInline: ""overscrollBehaviorX: ""overscrollBehaviorY: ""padding: ""paddingBlockEnd: ""paddingBlockStart: ""paddingBottom: ""paddingInlineEnd: ""paddingInlineStart: ""paddingLeft: ""paddingRight: ""paddingTop: ""page: ""pageBreakAfter: ""pageBreakBefore: ""pageBreakInside: ""pageOrientation: ""paintOrder: ""parentRule: nullperspective: ""perspectiveOrigin: ""placeContent: ""placeItems: ""placeSelf: ""pointerEvents: ""position: ""quotes: ""r: ""resize: ""right: ""rowGap: ""rubyPosition: ""rx: ""ry: ""scrollBehavior: ""scrollMargin: ""scrollMarginBlock: ""scrollMarginBlockEnd: ""scrollMarginBlockStart: ""scrollMarginBottom: ""scrollMarginInline: ""scrollMarginInlineEnd: ""scrollMarginInlineStart: ""scrollMarginLeft: ""scrollMarginRight: ""scrollMarginTop: ""scrollPadding: ""scrollPaddingBlock: ""scrollPaddingBlockEnd: ""scrollPaddingBlockStart: ""scrollPaddingBottom: ""scrollPaddingInline: ""scrollPaddingInlineEnd: ""scrollPaddingInlineStart: ""scrollPaddingLeft: ""scrollPaddingRight: ""scrollPaddingTop: ""scrollSnapAlign: ""scrollSnapStop: ""scrollSnapType: ""shapeImageThreshold: ""shapeMargin: ""shapeOutside: ""shapeRendering: ""size: ""speak: ""src: ""stopColor: ""stopOpacity: ""stroke: ""strokeDasharray: ""strokeDashoffset: ""strokeLinecap: ""strokeLinejoin: ""strokeMiterlimit: ""strokeOpacity: ""strokeWidth: ""syntax: ""tabSize: ""tableLayout: ""textAlign: ""textAlignLast: ""textAnchor: ""textCombineUpright: ""textDecoration: ""textDecorationColor: ""textDecorationLine: ""textDecorationSkipInk: ""textDecorationStyle: ""textIndent: ""textOrientation: ""textOverflow: ""textRendering: ""textShadow: ""textSizeAdjust: ""textTransform: ""textUnderlinePosition: ""top: ""touchAction: ""transform: ""transformBox: ""transformOrigin: ""transformStyle: ""transition: ""transitionDelay: ""transitionDuration: ""transitionProperty: ""transitionTimingFunction: ""unicodeBidi: ""unicodeRange: ""userSelect: ""userZoom: ""vectorEffect: ""verticalAlign: ""visibility: ""webkitAlignContent: ""webkitAlignItems: ""webkitAlignSelf: ""webkitAnimation: ""webkitAnimationDelay: ""webkitAnimationDirection: ""webkitAnimationDuration: ""webkitAnimationFillMode: ""webkitAnimationIterationCount: ""webkitAnimationName: ""webkitAnimationPlayState: ""webkitAnimationTimingFunction: ""webkitAppRegion: ""webkitAppearance: ""webkitBackfaceVisibility: ""webkitBackgroundClip: ""webkitBackgroundOrigin: ""webkitBackgroundSize: ""webkitBorderAfter: ""webkitBorderAfterColor: ""webkitBorderAfterStyle: ""webkitBorderAfterWidth: ""webkitBorderBefore: ""webkitBorderBeforeColor: ""webkitBorderBeforeStyle: ""webkitBorderBeforeWidth: ""webkitBorderBottomLeftRadius: ""webkitBorderBottomRightRadius: ""webkitBorderEnd: ""webkitBorderEndColor: ""webkitBorderEndStyle: ""webkitBorderEndWidth: ""webkitBorderHorizontalSpacing: ""webkitBorderImage: ""webkitBorderRadius: ""webkitBorderStart: ""webkitBorderStartColor: ""webkitBorderStartStyle: ""webkitBorderStartWidth: ""webkitBorderTopLeftRadius: ""webkitBorderTopRightRadius: ""webkitBorderVerticalSpacing: ""webkitBoxAlign: ""webkitBoxDecorationBreak: ""webkitBoxDirection: ""webkitBoxFlex: ""webkitBoxOrdinalGroup: ""webkitBoxOrient: ""webkitBoxPack: ""webkitBoxReflect: ""webkitBoxShadow: ""webkitBoxSizing: ""webkitClipPath: ""webkitColumnBreakAfter: ""webkitColumnBreakBefore: ""webkitColumnBreakInside: ""webkitColumnCount: ""webkitColumnGap: ""webkitColumnRule: ""webkitColumnRuleColor: ""webkitColumnRuleStyle: ""webkitColumnRuleWidth: ""webkitColumnSpan: ""webkitColumnWidth: ""webkitColumns: ""webkitFilter: ""webkitFlex: ""webkitFlexBasis: ""webkitFlexDirection: ""webkitFlexFlow: ""webkitFlexGrow: ""webkitFlexShrink: ""webkitFlexWrap: ""webkitFontFeatureSettings: ""webkitFontSizeDelta: ""webkitFontSmoothing: ""webkitHighlight: ""webkitHyphenateCharacter: ""webkitJustifyContent: ""webkitLineBreak: ""webkitLineClamp: ""webkitLocale: ""webkitLogicalHeight: ""webkitLogicalWidth: ""webkitMarginAfter: ""webkitMarginBefore: ""webkitMarginEnd: ""webkitMarginStart: ""webkitMask: ""webkitMaskBoxImage: ""webkitMaskBoxImageOutset: ""webkitMaskBoxImageRepeat: ""webkitMaskBoxImageSlice: ""webkitMaskBoxImageSource: ""webkitMaskBoxImageWidth: ""webkitMaskClip: ""webkitMaskComposite: ""webkitMaskImage: ""webkitMaskOrigin: ""webkitMaskPosition: ""webkitMaskPositionX: ""webkitMaskPositionY: ""webkitMaskRepeat: ""webkitMaskRepeatX: ""webkitMaskRepeatY: ""webkitMaskSize: ""webkitMaxLogicalHeight: ""webkitMaxLogicalWidth: ""webkitMinLogicalHeight: ""webkitMinLogicalWidth: ""webkitOpacity: ""webkitOrder: ""webkitPaddingAfter: ""webkitPaddingBefore: ""webkitPaddingEnd: ""webkitPaddingStart: ""webkitPerspective: ""webkitPerspectiveOrigin: ""webkitPerspectiveOriginX: ""webkitPerspectiveOriginY: ""webkitPrintColorAdjust: ""webkitRtlOrdering: ""webkitRubyPosition: ""webkitShapeImageThreshold: ""webkitShapeMargin: ""webkitShapeOutside: ""webkitTapHighlightColor: ""webkitTextCombine: ""webkitTextDecorationsInEffect: ""webkitTextEmphasis: ""webkitTextEmphasisColor: ""webkitTextEmphasisPosition: ""webkitTextEmphasisStyle: ""webkitTextFillColor: ""webkitTextOrientation: ""webkitTextSecurity: ""webkitTextSizeAdjust: ""webkitTextStroke: ""webkitTextStrokeColor: ""webkitTextStrokeWidth: ""webkitTransform: ""webkitTransformOrigin: ""webkitTransformOriginX: ""webkitTransformOriginY: ""webkitTransformOriginZ: ""webkitTransformStyle: ""webkitTransition: ""webkitTransitionDelay: ""webkitTransitionDuration: ""webkitTransitionProperty: ""webkitTransitionTimingFunction: ""webkitUserDrag: ""webkitUserModify: ""webkitUserSelect: ""webkitWritingMode: ""whiteSpace: ""widows: ""width: ""willChange: ""wordBreak: ""wordSpacing: ""wordWrap: ""writingMode: ""x: ""y: ""zIndex: ""zoom: ""epubCaptionSide: <unreadable>epubTextCombine: <unreadable>epubTextEmphasis: <unreadable>epubTextEmphasisColor: <unreadable>epubTextEmphasisStyle: <unreadable>epubTextOrientation: <unreadable>epubTextTransform: <unreadable>epubWordBreak: <unreadable>epubWritingMode: <unreadable>__proto__: CSSStyleDeclaration
+document.querySelector("h1").style.color = 'green';
+"green"
+document.querySelector("h1").style.fontSize = '12';
+"12"
+document.querySelector("h1").style.fontSize = '12px';
+"12px"
+document.querySelector("h1").style.fontSize = '20px';
+"20px"
+document.querySelector("h1").style.cssText = "color:red; font-size:15px; font-family:calibri;";
+"color:red; font-size:15px; font-family:calibri;"
+document.querySelector("h1").style.cssText = "color:blue; font-size:35px; font-family:time new roman;";
+"color:blue; font-size:35px; font-family:time new roman;"
+document.querySelector("h1").setAttribute("style", "color: brown; font-size:16px;");
+undefined
+ */
+</script>
+</html>
